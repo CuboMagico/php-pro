@@ -32,11 +32,20 @@
             explode("/", ltrim($match, "/"))
         );
 
-        echo "<pre>";
-        var_dump($uriParams);
-        echo "</pre>";
-
         return $uriParams;
+    }
+
+
+    function paramsFormat ($uri, $params) {
+
+        $uri = explode("/", ltrim($uri, "/"));
+        $parData = [];
+
+        foreach ($params as $index => $param) {
+            $parData[$uri[$index - 1]] = $param;
+        }
+
+        return $parData;
     }
 
 
@@ -49,14 +58,10 @@
             $uriMatches = uriDinamicMatchesArrayValue($uri, $routes);
 
             if(!empty($uriMatches)) {
-                echo "<pre>";
-                var_dump($uri);
-                var_dump($uriMatches);
                 $params = getParamsFromDinamicUri($uri, $uriMatches);
-                echo "<pre>";
+                $formatedParams = paramsFormat($uri, $params);
             }
         }
     }
-
 
 ?>
