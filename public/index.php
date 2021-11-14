@@ -1,5 +1,11 @@
 <?php
 
     require "bootstrap.php";
+    
+    try {
+        router();
 
-    router();
+    } catch (Exception $e) {
+        var_dump($e->getMessage());
+    }
+

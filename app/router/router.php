@@ -54,6 +54,8 @@
         $routes = routes();
 
         $uriMatches = uriExactMatchesArrayValue($uri, $routes);
+        
+        $params = [];
         if (empty($uriMatches)) {
             $uriMatches = uriDinamicMatchesArrayValue($uri, $routes);
 
@@ -62,6 +64,13 @@
                 $formatedParams = paramsFormat($uri, $params);
             }
         }
+
+        if (!empty($uriMatches)) {
+            controller($uriMatches, $params);
+            return;
+        }
+
+        throw new Exception("Deu ruim...");
     }
 
 ?>

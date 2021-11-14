@@ -1,5 +1,3 @@
 <?php
 
-namespace app\helpers;
-
-define("TESTE", "texto para texte");
+    define("CONTROLLER_PATH", "app\\controllers\\");
