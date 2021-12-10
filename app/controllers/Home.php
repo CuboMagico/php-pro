@@ -4,7 +4,13 @@
     class Home {
 
         function index ($params) {
-            var_dump($params);
+            return [
+                "view" => "home.php",
+                "data" => [
+                    "name" => "Maciel",
+                    "teste" => "String de teste"
+                    ]
+            ];
         }
     }
 

@@ -9,7 +9,12 @@
         }
 
         $controllerInstance = new $controllerAndPath;
-        $controllerInstance->$method($params);
+
+        if (!method_exists($controllerInstance, $method)) {
+            throw new Exception("O metodo $method não existe no controller $controller");
+        }
+
+        return $controllerInstance->$method($params);
     }
 
 ?>

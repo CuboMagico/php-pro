@@ -66,8 +66,7 @@
         }
 
         if (!empty($uriMatches)) {
-            controller($uriMatches, $params);
-            return;
+            return controller($uriMatches, $params);
         }
 
         throw new Exception("Deu ruim...");
