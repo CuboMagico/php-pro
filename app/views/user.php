@@ -1,0 +1,1 @@
+<h1>Bem vindo a página do user <?php echo $user->name; ?></h1>

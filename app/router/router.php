@@ -61,7 +61,7 @@
 
             if(!empty($uriMatches)) {
                 $params = getParamsFromDinamicUri($uri, $uriMatches);
-                $formatedParams = paramsFormat($uri, $params);
+                $params = paramsFormat($uri, $params);
             }
         }
 

@@ -4,11 +4,14 @@
     class Home {
 
         function index ($params) {
+            
+            $users = all("users");
+
             return [
                 "view" => "home.php",
                 "data" => [
-                    "name" => "Maciel",
-                    "teste" => "String de teste"
+                    "title" => "Home",
+                    "users" => $users
                     ]
             ];
         }

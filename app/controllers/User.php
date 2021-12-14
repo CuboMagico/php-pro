@@ -4,12 +4,21 @@
     class User {
 
         function index ($params) {
-            echo "index do user";
-            var_dump($params);
+    
+            $user = findBy("users", $params["user"], "id");
+            
+            return [
+                "view" => "user.php",
+                "data" => [
+                    "title" => "User", 
+                    "user" => $user
+                ]
+            ];
         }
 
         function show ($params) {
-            echo "Dados do user";
-            var_dump($params);
+            if (!isset($params)) {
+                return redirect("/");
+            }
         }
     }
