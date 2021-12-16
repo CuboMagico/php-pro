@@ -13,6 +13,10 @@
             throw new Exception("Parametro data não passado");
         }
 
+        if (!isset($router["data"]["title"])) {
+            throw new Exception("Parametro title não passado");
+        }
+
         if (!file_exists(VIEWS.$router["view"])) {
             throw new Exception("O arquivo da view não existe");
         }

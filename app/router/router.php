@@ -6,11 +6,7 @@
 
 
     function uriExactMatchesArrayValue ($uri, $routes) {
-        if(array_key_exists($uri, $routes)) {
-            return [$uri => $routes[$uri]];
-        };
-
-        return [];
+        return (array_key_exists($uri, $routes)) ? [$uri => $routes[$uri]] : [];
     }
 
 
@@ -51,9 +47,11 @@
 
     function router () {
         $uri = str_replace("/club-full-stack-php-profissional/public", "", parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH));
-        $routes = routes();
+        $requestMethod = $_SERVER["REQUEST_METHOD"];
+        $routes = routes()[$requestMethod];
 
         $uriMatches = uriExactMatchesArrayValue($uri, $routes);
+
         
         $params = [];
         if (empty($uriMatches)) {

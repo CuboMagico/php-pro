@@ -7,8 +7,11 @@
     <title><?php echo $title; ?></title>
 </head>
 <body>
-    <div class="container">
+    <header>
+        <?php require "partials/header.php"; ?>
+    </header>
+    <main class="container">
         <?php require $view; ?>
-    </div>
+    </main>
 </body>
 </html>
