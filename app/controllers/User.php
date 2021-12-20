@@ -16,9 +16,34 @@
             ];
         }
 
+
         function show ($params) {
             if (!isset($params)) {
                 return redirect("/");
+            }
+        }
+
+
+        function create () {
+
+            return [
+                "view" => "create.php",
+                "data" => [
+                    "title" => "Cadastro de usuário",
+                ]
+            ];
+        }
+
+
+        function store () {
+            $validate = validate([
+                "name" => "required",
+                "email" => "required|unique",
+                "password" => "required|maxlen",
+            ]);
+
+            if (!$validate) {
+                return redirect("/user/create");
             }
         }
     }

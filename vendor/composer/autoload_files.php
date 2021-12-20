@@ -10,6 +10,7 @@ return array(
     '34971c909d7c554f2bd313156ca5fefd' => $baseDir . '/app/helpers/redirect.php',
     'a3f9da12b9bbeae7dcfcadefeffc8e4f' => $baseDir . '/app/helpers/flash.php',
     'df2fec6bc9fd1e58e3427ff5a46df546' => $baseDir . '/app/helpers/session.php',
+    '56475b01541fe4279db476f9d1d4d0ef' => $baseDir . '/app/helpers/validate.php',
     '0fa8f2827f4815ad3ff007e602d6523f' => $baseDir . '/app/router/router.php',
     '2c12fde09a8d019eb1f150a430809b3c' => $baseDir . '/app/core/controller.php',
     'ce3419880ee71a8739755113846f8518' => $baseDir . '/app/database/connection.php',

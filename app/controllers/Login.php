@@ -25,7 +25,6 @@
             
             $user = findBy("users", $email, "email");
             
-            
             if (!$user) {
                 return setMessageAndRedirect("./login", "login", "Email ou senha inválidos");
             }
