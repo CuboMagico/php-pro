@@ -38,12 +38,17 @@
         function store () {
             $validate = validate([
                 "name" => "required",
-                "email" => "required|unique",
-                "password" => "required|maxlen",
+                "email" => "required|unique:users",
+                "password" => "required|maxlen:20",
             ]);
 
             if (!$validate) {
                 return redirect("/user/create");
             }
+
+
+            
+            var_dump($validate);
+            die();
         }
     }
