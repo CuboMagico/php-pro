@@ -15,4 +15,5 @@ return array(
     '2c12fde09a8d019eb1f150a430809b3c' => $baseDir . '/app/core/controller.php',
     'ce3419880ee71a8739755113846f8518' => $baseDir . '/app/database/connection.php',
     '7fa25b4381d4c73b184e89b3cfffd79d' => $baseDir . '/app/database/fetch.php',
+    '07319531c59c6645ca913e80428dd9e4' => $baseDir . '/app/database/create.php',
 );

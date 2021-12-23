@@ -1,7 +1,9 @@
 <ul>
     <li><a href="/">Home</a></li>
-    <li><a href="/login">Login</a></li>
-    <li><a href="/user/create">Sign Up</a></li>
+    <?php if (!logged()) : ?>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/user/create">Sign Up</a></li>
+    <?php endif; ?>
 </ul>
 
 <div>

@@ -41,14 +41,21 @@
                 "email" => "required|unique:users",
                 "password" => "required|maxlen:20",
             ]);
+            
 
             if (!$validate) {
                 return redirect("/user/create");
             }
 
+            $validate["password"] = password_hash($validate["password"], PASSWORD_DEFAULT);
 
-            
-            var_dump($validate);
-            die();
+            $created = create("users", $validate);
+
+            if (!$created) {
+                setFlash("signup", "Não foi possível realizar o cadastro, tente novamente em alguns segundos");
+                return redirect("/user/create");
+            }
+
+            return redirect("/login");
         }
     }

@@ -30,13 +30,16 @@
 
     function multipleValidations ($validation, $field, $param) {
         $explodedPipe = explode("|", $validation);
-        $param = [];
 
         foreach ($explodedPipe as $validation) {
             if (str_contains($validation, ":")) {
                 [$validation, $param] = explode(":", $validation);
             }
             $result = $validation($field, $param);
+
+            if (!$result) {
+                break;
+            }
         }
 
         return $result;

@@ -1,3 +1,5 @@
+<?php if(logged()) { redirect("/"); } ?>
+
 <h2>Login</h2>
 
 <form action="/login" method="POST">
