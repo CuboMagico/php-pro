@@ -5,16 +5,16 @@
             "app\\":"app"
         },
         "files": [
-            "app/helpers/constants.php",
-            "app/helpers/redirect.php",
-            "app/helpers/flash.php",
-            "app/helpers/session.php",
-            "app/helpers/validate.php",
-            "app/router/router.php",
             "app/core/controller.php",
             "app/database/connection.php",
+            "app/database/create.php",
             "app/database/fetch.php",
-            "app/database/create.php"
+            "app/helpers/constants.php",
+            "app/helpers/flash.php",
+            "app/helpers/redirect.php",
+            "app/helpers/session.php",
+            "app/helpers/validate.php",
+            "app/router/router.php"
         ]
     },
     "authors": [

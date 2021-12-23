@@ -42,6 +42,6 @@
         function destroy () {
             unset($_SESSION[LOGGED]);
 
-            return redirect("./");
+            return redirect("/");
         }
     }
